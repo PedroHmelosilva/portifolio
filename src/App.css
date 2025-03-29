@@ -10,8 +10,7 @@ img#perfil_foto {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  background-color: rgb(129, 102, 52); /* Usar mais tarde a cor marrom */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .separator {
@@ -29,8 +28,53 @@ div#container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 90vh;
 }
 
 div#letters {
   width: 100em;
+}
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  div#container {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+  }
+
+  div#letters {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  img#perfil_foto {
+    width: 400px;
+    height: 400px;
+  }
+
+  .separator {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+/* Additional styles for very small screens */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  img#perfil_foto {
+    width: 400px;
+    height: 400px;
+  }
 }
