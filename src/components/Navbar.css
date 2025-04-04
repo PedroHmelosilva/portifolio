@@ -1,0 +1,154 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 2rem;
+  background-color: #D97A43;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.desktop-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.desktop-buttons a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.desktop-buttons a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.menu-buttons {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #D97A43;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 150px;
+}
+
+.menu-buttons.active {
+  display: flex;
+}
+
+.menu-buttons a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.menu-buttons a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    background-color: #D97A43;
+    height: 50px;
+  }
+
+  .desktop-buttons {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-buttons {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #D97A43;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    align-items: center;
+    z-index: 10000;
+  }
+
+  .menu-buttons a {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hamburger span {
+    width: 20px;
+  }
+
+  .menu-buttons {
+    min-width: 180px;
+  }
+}

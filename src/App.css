@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -10,6 +9,7 @@ img#perfil_foto {
   width: 500px;
   height: 500px;
   border-radius: 50%;
+  border: 5px solid #734C4C;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -28,22 +28,24 @@ div#container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90vh;
+  height: calc(100vh - 60px);
+  width: calc(100% - 20rem);
+  padding: 0 10rem 0 10rem;
 }
 
 div#letters {
-  width: 100em;
+  width: 50em;
 }
 
 /* Responsive Design for Mobile Devices */
 @media screen and (max-width: 768px) {
   #root {
-    padding: 1rem;
+    padding-top: 4rem; /* Adjust padding for mobile */
   }
 
   div#container {
     flex-direction: column;
-    height: auto;
+    height: calc(100vh - 60px);
     gap: 2rem;
   }
 
@@ -53,12 +55,12 @@ div#letters {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   img#perfil_foto {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
 
   .separator {
@@ -70,11 +72,11 @@ div#letters {
 /* Additional styles for very small screens */
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   img#perfil_foto {
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
   }
 }
