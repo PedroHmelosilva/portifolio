@@ -25,7 +25,7 @@ const Contact = () => {
           </p>
           <div className="social-links">
             <a
-              href="https://github.com"
+              href="https://github.com/PedroHmelosilva"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
@@ -43,23 +43,31 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name" className="form-label">Name</label>
-            <input type="text" id="name" name="name" className="form-input" required />
+        <div className="contact-info">
+          <h1>Contact</h1>
+          <p className="contact-text-list">
+          Name: Pedro Henrique Mello Silva <br />
+          Email: pedrohmeloesilva@gmail.com <br />
+          </p>
+          <div className="social-links">
+            <a
+              href="https://github.com/PedroHmelosilva"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pedromeloesilva/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+            >
+              LinkedIn
+            </a>
           </div>
-          <div className="form-group">
-            <label htmlFor="email" className="form-label">Email</label>
-            <input type="email" id="email" name="email" className="form-input" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message" className="form-label">Message</label>
-            <textarea id="message" name="message" className="form-textarea" required />
-          </div>
-          <button type="submit" className="submit-button">
-            Send Message
-          </button>
-        </form>
+        </div>
       </div>
     </section>
   );
