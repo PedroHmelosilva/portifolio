@@ -24,6 +24,13 @@
   text-align: justify;
 }
 
+.contact-text-list {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
+}
+
 .social-links {
   display: flex;
   justify-content: center;

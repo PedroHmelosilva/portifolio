@@ -23,24 +23,6 @@ const Contact = () => {
           or young apprenticeship opportunity to apply my technical 
           knowledge.
           </p>
-          <div className="social-links">
-            <a
-              href="https://github.com/PedroHmelosilva"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/pedromeloesilva/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              LinkedIn
-            </a>
-          </div>
         </div>
 
         <div className="contact-info">
