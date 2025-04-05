@@ -20,7 +20,7 @@ function App() {
 function TransitionText() {
     // Array com todas as palavras que queremos mostrar
     const words = ['Hello World!!', 'My name is Pedro', 'Full Stack Junior Developer', 'Welcome!'];
-
+    
     const [currentText, setCurrentText] = useState(words[0]);
     const [displayText, setDisplayText] = useState(words[0]);
     const [isTransitioning, setIsTransitioning] = useState(false);

@@ -26,6 +26,30 @@ const Projects = () => {
       image: "https://via.placeholder.com/400x200",
       technologies: ["React", "TypeScript", "Firebase"],
       link: "#"
+    },
+    {
+      id: 4,
+      title: "Project 4",
+      description: "A brief description of the project and its key features.",
+      image: "https://via.placeholder.com/400x200",
+      technologies: ["React", "Node.js", "MongoDB"],
+      link: "#"
+    },
+    {
+      id: 5,
+      title: "Project 5",
+      description: "Another amazing project showcasing different skills and technologies.",
+      image: "https://via.placeholder.com/400x200",
+      technologies: ["JavaScript", "Express", "PostgreSQL"],
+      link: "#"
+    },
+    {
+      id: 6,
+      title: "Project 6",
+      description: "A third project demonstrating various aspects of web development.",
+      image: "https://via.placeholder.com/400x200",
+      technologies: ["React", "TypeScript", "Firebase"],
+      link: "#"
     }
   ];
 

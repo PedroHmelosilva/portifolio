@@ -2,14 +2,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .5rem 2rem;
+  padding: .5rem 0rem;
   background-color: #D97A43;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
-  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.navbar:not(.sticky) {
+  animation: slideUp 0.3s ease-in-out;
 }
 
 .desktop-buttons {
