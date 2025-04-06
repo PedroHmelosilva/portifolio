@@ -4,7 +4,7 @@
   align-items: center;
   padding: .5rem 0rem;
   background-color: #D97A43;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.289);
   position: relative;
   width: 100%;
   z-index: 9999;
@@ -49,17 +49,34 @@
 
 .desktop-buttons a {
   color: #333;
-  text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: all 0.2s ease;
   font-size: 1.2rem;
+  position: relative;
+}
+
+.desktop-buttons a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #333;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.desktop-buttons a:hover::after,
+.desktop-buttons a:active::after,
+.desktop-buttons a:focus::after {
+  width: 80%;
 }
 
 .desktop-buttons a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
+color: #fff;
 }
 
 .menu-toggle {

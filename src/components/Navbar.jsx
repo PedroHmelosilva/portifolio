@@ -28,6 +28,7 @@ function Navbar() {
   return (
     <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
       <div className="desktop-buttons">
+        <a href="#">Home</a>
         <a href="#projects-section">Projects</a>
         <a href="#contact">Contact</a>
       </div>
