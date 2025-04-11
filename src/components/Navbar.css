@@ -154,6 +154,8 @@ color: #fff;
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+  
+
   .navbar {
     padding: 0.5rem;
     justify-content: center;
@@ -161,7 +163,7 @@ color: #fff;
     bottom: 0;
     top: auto;
     width: 100%;
-    background-color: #D97A43;
+    background-color: rgba(217, 122, 67, 0);
     height: 50px;
   }
 
