@@ -28,7 +28,7 @@ const Contact = () => {
         <div className="contact-info">
           <h1>Contact</h1>
           <p className="contact-text-list">
-          Name: Pedro Henrique Mello Silva <br />
+          Name: Pedro Henrique Melo Silva <br />
           Email: pedrohmeloesilva@gmail.com <br />
           </p>
           <div className="social-links">
