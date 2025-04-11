@@ -19,7 +19,7 @@ function App() {
 //Função que faz a transição de texto
 function TransitionText() {
     // Array com todas as palavras que queremos mostrar
-    const words = ['Hello World!!', 'My name is Pedro', 'Full Stack Junior Developer', 'Welcome!'];
+    const words = ['Hello World!!', 'My name is Pedro', 'Full Stack Developer', 'Welcome!'];
     
     const [currentText, setCurrentText] = useState(words[0]);
     const [displayText, setDisplayText] = useState(words[0]);

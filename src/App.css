@@ -59,7 +59,7 @@ div#letters {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 1rem;
   }
 
   img#perfil_foto {
@@ -77,7 +77,7 @@ div#letters {
 /* Additional styles for very small screens */
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   img#perfil_foto {
