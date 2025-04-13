@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Projects.css';
 import buscador_cep from '../assets/img/buscador_cep.png';
 
 const Projects = () => {
+  const [activeProjectId, setActiveProjectId] = useState(null);
+  const [activeButtonType, setActiveButtonType] = useState(null);
+
+  const handleProjectLinkHover = (projectId, buttonType) => {
+    setActiveProjectId(projectId);
+    setActiveButtonType(buttonType);
+  };
+
+  const handleProjectLinkLeave = () => {
+    setActiveProjectId(null);
+    setActiveButtonType(null);
+  };
+
   const projects = [
     {
       id: 1,
@@ -75,9 +88,27 @@ const Projects = () => {
                 ))}
               </div>
               <div className="project-links">
-                <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <a 
+                  href={project.link} 
+                  className={`project-link ${activeProjectId === project.id && activeButtonType === 'view' ? 'active' : ''}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  onMouseOver={() => handleProjectLinkHover(project.id, 'view')} 
+                  onMouseLeave={handleProjectLinkLeave}
+                >
+                  View Project
+                </a>
                 {project.siteUrl && (
-                  <a href={project.siteUrl} className="project-site-link" target="_blank" rel="noopener noreferrer">Visit Site</a>
+                  <a 
+                    href={project.siteUrl} 
+                    className={`project-site-link ${activeProjectId === project.id && activeButtonType === 'site' ? 'active' : ''}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    onMouseOver={() => handleProjectLinkHover(project.id, 'site')} 
+                    onMouseLeave={handleProjectLinkLeave}
+                  >
+                    Visit Site
+                  </a>
                 )}
               </div>
             </div>

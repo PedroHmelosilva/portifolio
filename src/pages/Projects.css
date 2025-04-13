@@ -24,8 +24,9 @@
 
 .project-card {
   display: flex;
-  background: #f2994b7e;
+  background: #ffffff;
   border-radius: 12px;
+  border: 1.5px solid #f2994b7b;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -86,6 +87,7 @@
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  position: relative;
 }
 
 .project-link, .project-site-link {
@@ -94,21 +96,52 @@
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  text-align: center;
 }
 
 .project-link {
-  background-color: #007bff;
+  background-color: #734C4C;
   color: white;
+  border: 0;
 }
 
 .project-site-link {
-  background-color: #28a745;
+  background-color: #734c4c;
   color: white;
+  border: 0;
 }
 
-.project-link:hover {
-  background-color: #555;
+.project-link:hover, .project-site-link:hover {
+  background-color: #734c4c;
+}
+
+.project-link.active, .project-site-link.active {
+  text-indent: -9999px;
+  transform: scale(1);
+  color: transparent;
+}
+
+/* Styles for project links without site button */
+.project-links:not(:has(.project-site-link)) .project-link.active::after,
+.project-links:has(.project-site-link) .project-link.active::after,
+.project-links:has(.project-link) .project-site-link.active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%) scale(1);
+  text-indent: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M12 5l7 7-7 7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
