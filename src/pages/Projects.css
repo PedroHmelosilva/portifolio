@@ -14,36 +14,51 @@
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   width: 100%;
   max-width: 1200px;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .project-card {
-  background: white;
+  display: flex;
+  background: #f2994b7e;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-image-container {
+  flex: 2;
+  overflow: hidden;
 }
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
-.project-content {
-  padding: 1.5rem;
-}
-
 .project-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
   color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .project-content p {
@@ -56,7 +71,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .tech-tag {
@@ -67,22 +82,44 @@
   font-size: 0.9rem;
 }
 
-.project-link {
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-link, .project-site-link {
   display: inline-block;
-  background-color: #333;
-  color: white;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-link {
+  background-color: #007bff;
+  color: white;
+}
+
+.project-site-link {
+  background-color: #28a745;
+  color: white;
 }
 
 .project-link:hover {
   background-color: #555;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+  }
+  
+  .project-image-container {
+    height: 200px;
+  }
+  
   .projects-section {
     padding: 3rem 1rem;
   }
@@ -90,11 +127,6 @@
   .projects-section h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 }
 
