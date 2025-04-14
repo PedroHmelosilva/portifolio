@@ -176,3 +176,13 @@
     padding: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .project-card {
+    transition: none !important;
+  }
+
+  .project-card:hover {
+    transform: none !important;
+  }
+}

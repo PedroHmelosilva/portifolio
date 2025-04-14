@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Projects.css';
 import buscador_cep from '../assets/img/buscador_cep.png';
+import todo from '../assets/img/to_do.png';
+import galeria from '../assets/img/site_galeria.png';
 
 const Projects = () => {
   const [activeProjectId, setActiveProjectId] = useState(null);
@@ -20,7 +22,7 @@ const Projects = () => {
     {
       id: 1,
       title: "C# Projects",
-      description: "My projects when i was studying C# in ETEC",
+      description: "Collection of C# applications developed during ETEC studies, exploring .NET and object-oriented programming.",
       image: "https://raw.githubusercontent.com/PedroHmelosilva/portifolio/main/public/logo192.png",
       technologies: ["C#", ".NET"],
       link: "https://github.com/PedroHmelosilva/repositorio_projetos_visualstudio",
@@ -29,8 +31,8 @@ const Projects = () => {
     {
       id: 2,
       title: "Gallery Project",
-      description: "Project made with Sass showcasing gallery functionality",
-      image: "https://via.placeholder.com/800x400",
+      description: "Responsive image gallery web app built with Sass, showcasing modern web design techniques.",
+      image: galeria,
       technologies: ["Sass", "HTML"],
       link: "https://github.com/PedroHmelosilva/projeto_galeria",
       siteUrl: null
@@ -38,10 +40,10 @@ const Projects = () => {
     {
       id: 3,
       title: "To-Do List",
-      description: "Task management application from Hora de Codar tutorial",
-      image: "https://via.placeholder.com/800x400",
+      description: "Interactive task management app demonstrating core JavaScript functionality.",
+      image: todo,
       technologies: ["JavaScript", "HTML", "CSS"],
-      link: "https://github.com/PedroHmelosilva/to-do_list",
+      link: null,
       siteUrl: null
     },
     {
@@ -69,6 +71,15 @@ const Projects = () => {
       image: "https://via.placeholder.com/800x400",
       technologies: ["JavaScript", "Security"],
       link: "https://github.com/PedroHmelosilva/gerador_de_senhas",
+      siteUrl: null
+    },
+    {
+      id: 7,
+      title: "Portfolio Website",
+      description: "Personal portfolio built with React, showcasing web development skills and projects.",
+      image: "https://via.placeholder.com/800x400",
+      technologies: ["React", "Vite", "JavaScript", "CSS"],
+      link: "https://github.com/PedroHmelosilva/portifolio",
       siteUrl: null
     }
   ];
