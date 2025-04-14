@@ -3,6 +3,8 @@ import './Projects.css';
 import buscador_cep from '../assets/img/buscador_cep.png';
 import todo from '../assets/img/to_do.png';
 import galeria from '../assets/img/site_galeria.png';
+import gerador_senhas from '../assets/img/gerador_senhas.png';
+import profile_site from '../assets/img/profile.png';
 
 const Projects = () => {
   const [activeProjectId, setActiveProjectId] = useState(null);
@@ -68,7 +70,7 @@ const Projects = () => {
       id: 6,
       title: "Password Generator",
       description: "JavaScript application for generating secure passwords",
-      image: "https://via.placeholder.com/800x400",
+      image: gerador_senhas,
       technologies: ["JavaScript", "Security"],
       link: "https://github.com/PedroHmelosilva/gerador_de_senhas",
       siteUrl: null
@@ -76,10 +78,10 @@ const Projects = () => {
     {
       id: 7,
       title: "Portfolio Website",
-      description: "Personal portfolio built with React, showcasing web development skills and projects.",
-      image: "https://via.placeholder.com/800x400",
+      description: "Profile site built with React, SASS and Vite, showcasing web development skills.",
+      image: profile_site,
       technologies: ["React", "Vite", "JavaScript", "CSS"],
-      link: "https://github.com/PedroHmelosilva/portifolio",
+      link: "https://github.com/PedroHmelosilva/profile_pessoal",
       siteUrl: null
     }
   ];
