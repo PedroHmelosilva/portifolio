@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.3.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-magic-motion": "^1.1.2",
+    "react-pdf": "^9.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

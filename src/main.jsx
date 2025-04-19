@@ -9,10 +9,10 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-    <Navbar />
-    <Projects />
-    <Contact />
-    <Tools />
+        <App />
+        <Navbar />
+        <Projects />
+        <Contact />
+        <Tools />
   </React.StrictMode>,
 )

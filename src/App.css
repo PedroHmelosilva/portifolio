@@ -85,3 +85,31 @@ div#letters {
     height: 250px;
   }
 }
+
+/* Button style for show card */
+.show-card-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #734C4C;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+/* Card style */
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: relative;
+}

@@ -1,13 +1,31 @@
 import { useState, useEffect } from 'react'
 import perfil_foto from './assets/img/perfil_foto2.jpg'
+import { Document, Page } from 'react-pdf';
 import './App.css'
 
 function App() {
+  const [showCard, setShowCard] = useState(false);
+
+  const toggleCard = () => {
+    setShowCard(!showCard);
+  };
+
   return (
     <>
         <div id="container">
             <div id="letters">
                 <h1><TransitionText /></h1>{/*Comando que chama a função de transição de texto*/}
+                <button onClick={toggleCard} className="show-card-btn">
+                  Curriculum
+                </button>
+                {showCard && (
+                  <div className="pdf-modal">
+                    <Document file="./assets/Curriculo_PedroHenriqueMeloESilva.pdf">
+                      <Page pageNumber={1} />
+                    </Document>
+                    <button onClick={() => setShowCard(false)}>Close</button>
+                  </div>
+                )}
             </div>
           <div className='separator'></div>
           <img id="perfil_foto" src={perfil_foto} alt="Profile Photo" />
@@ -56,7 +74,13 @@ function TransitionText() {
       }
     }, [currentIndex, currentText, isTransitioning]);
   
-    return <h1>{displayText}</h1>;
-  }
+    useEffect(() => {
+      if (!isTransitioning) {
+        setDisplayText(currentText);
+      }
+    }, [currentText, isTransitioning]);
+  
+    return <span>{displayText}</span>;
+}
 
 export default App
