@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import perfil_foto from './assets/img/perfil_foto2.jpg'
 import { Document, Page } from 'react-pdf';
+import { MagicExit, MagicMotion } from "react-magic-motion";
 import './App.css'
 
 function App() {
@@ -18,14 +19,14 @@ function App() {
                 <button onClick={toggleCard} className="show-card-btn">
                   Curriculum
                 </button>
-                {showCard && (
-                  <div className="pdf-modal">
-                    <Document file="./assets/Curriculo_PedroHenriqueMeloESilva.pdf">
-                      <Page pageNumber={1} />
-                    </Document>
-                    <button onClick={() => setShowCard(false)}>Close</button>
-                  </div>
-                )}
+                    {showCard && (
+                      <div className="pdf-modal">
+                        <Document file="./assets/Curriculo_PedroHenriqueMeloESilva.pdf">
+                          <Page pageNumber={1} />
+                        </Document>
+                        <button onClick={() => setShowCard(false)}>Close</button>
+                      </div>
+                    )}
             </div>
           <div className='separator'></div>
           <img id="perfil_foto" src={perfil_foto} alt="Profile Photo" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Contact.css';
+import { FiGithub } from '@flaticon/flaticon-uicons';
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -38,7 +39,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="social-link"
             >
-              GitHub
+              <FiGithub size={24} />
             </a>
             <a
               href="https://www.linkedin.com/in/pedromeloesilva/"
