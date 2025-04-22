@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import perfil_foto from './assets/img/perfil_foto2.jpg'
 import { Document, Page } from 'react-pdf';
-import { MagicExit, MagicMotion } from "react-magic-motion";
 import './App.css'
 
 function App() {

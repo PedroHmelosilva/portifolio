@@ -101,6 +101,11 @@
   background-color: #bf6935;
 }
 
+.bi{
+  width: 40px;
+  height: 40px;
+}
+
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
