@@ -14,12 +14,14 @@ function App() {
     <>
         <div id="container">
             <div id="letters">
+                <h1 id='title'>Hello, I'm Pedro</h1>
                 <h1><TransitionText /></h1>{/*Comando que chama a função de transição de texto*/}
                 <button onClick={toggleCard} className="show-card-btn">
-                  Curriculum
+                    <i className="bi bi-file-earmark-arrow-down"></i>
+                    Curriculum
                 </button>
-                    {showCard && (
-                      <div className="pdf-modal">
+                {showCard && (
+                    <div className="pdf-modal">
                         <Document file="./assets/Curriculo_PedroHenriqueMeloESilva.pdf">
                           <Page pageNumber={1} />
                         </Document>
@@ -37,7 +39,7 @@ function App() {
 //Função que faz a transição de texto
 function TransitionText() {
     // Array com todas as palavras que queremos mostrar
-    const words = ['Hello World!!', 'My name is Pedro', 'Full Stack Developer', 'Welcome!'];
+    const words = ['Full Stack Developer', 'Data Science Student', 'ADS Technician'];
     
     const [currentText, setCurrentText] = useState(words[0]);
     const [displayText, setDisplayText] = useState(words[0]);

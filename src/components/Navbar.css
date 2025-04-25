@@ -25,12 +25,22 @@
 .navbar.hide {
   opacity: 0;
   pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   transition: opacity 0.4s;
 }
 
 .navbar.show {
   opacity: 1;
   pointer-events: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   transition: opacity 0.4s;
 }
 

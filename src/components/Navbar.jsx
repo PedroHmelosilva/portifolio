@@ -32,6 +32,7 @@ function Navbar() {
     <nav className={`navbar${isSticky ? ' sticky' : ''}${showNavbar ? ' show' : ' hide'}`}>
       <div className="desktop-buttons">
         <a href="#">Home</a>
+        <a href="#skills">Skills</a>
         <a href="#projects-section">Projects</a>
         <a href="#contact">Contact</a>
       </div>
@@ -42,6 +43,7 @@ function Navbar() {
           <span></span>
         </div>
         <div className={`menu-buttons ${isOpen ? 'active' : ''}`}>
+          <a href="#skills">Skills</a>
           <a href="#projects-section">Projects</a>
           <a href="#contact">Contact</a>
         </div>
