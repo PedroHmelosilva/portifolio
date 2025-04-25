@@ -34,7 +34,7 @@ function App() {
   )
 }
 
-//Função que faz a transição de
+//Função que faz a transição de texto
 function TransitionText() {
     // Array com todas as palavras que queremos mostrar
     const words = ['Hello World!!', 'My name is Pedro', 'Full Stack Developer', 'Welcome!'];

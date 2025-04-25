@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .5rem 0rem;
-  background-color: rgba(217, 122, 67, 0);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.289);
+  padding: .5rem 0;
+  background-color: #242424;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -20,6 +19,19 @@
   animation: slideDown 0.3s ease-in-out;
   background-color: rgba(217, 122, 67, 0.80);
   backdrop-filter: blur(10px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.289);
+}
+
+.navbar.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.navbar.show {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s;
 }
 
 @keyframes slideDown {

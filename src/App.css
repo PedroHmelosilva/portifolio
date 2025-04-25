@@ -22,6 +22,7 @@ h1 {
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.2;
+  color: #fff;
 }
 
 div#container {
@@ -29,8 +30,9 @@ div#container {
   justify-content: space-between;
   align-items: center;
   height: calc(100vh - 60px);
-  width: calc(100% - 20rem);
+  width: 100%;
   padding: 0 10rem 0 10rem;
+  background-color: #242424;
 }
 
 div#letters {

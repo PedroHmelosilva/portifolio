@@ -4,6 +4,7 @@ import './Navbar.css';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,8 +13,10 @@ function Navbar() {
       
       if (window.scrollY > navbarPosition) {
         setIsSticky(true);
+        setShowNavbar(true);
       } else {
         setIsSticky(false);
+        setShowNavbar(false);
       }
     };
 
@@ -26,7 +29,7 @@ function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
+    <nav className={`navbar${isSticky ? ' sticky' : ''}${showNavbar ? ' show' : ' hide'}`}>
       <div className="desktop-buttons">
         <a href="#">Home</a>
         <a href="#projects-section">Projects</a>
