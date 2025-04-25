@@ -17,8 +17,7 @@ function App() {
                 <h1 id='title'>Hello, I'm Pedro</h1>
                 <h1><TransitionText /></h1>{/*Comando que chama a função de transição de texto*/}
                 <button onClick={toggleCard} className="show-card-btn">
-                    <i className="bi bi-file-earmark-arrow-down"></i>
-                    Curriculum
+                    <i className="bi bi-file-earmark-arrow-down"></i> Curriculum
                 </button>
                 {showCard && (
                     <div className="pdf-modal">
