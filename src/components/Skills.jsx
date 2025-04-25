@@ -2,7 +2,9 @@ import React from "react";
 import "./Skills.css";
 
 const skills = [
-  { icon: '<i class="bi bi-file-earmark-arrow-down"></i>', name: "NodeJS", level: "Intermediate" },
+    { icon: '<i class="bi bi-braces"></i>', name: "C#", level: "Intermediate" },
+    { icon: '<i class="bi bi-filetype-py"></i>', name: "Python", level: "Intermediate" },
+  { icon: '<i class="bi bi-terminal"></i>', name: "NodeJS", level: "Intermediate" },
   { icon: '<i class="bi bi-filetype-jsx"></i>', name: "React", level: "Intermediate" },
   { icon: '<i class="bi bi-filetype-js"></i>', name: "JavaScript", level: "Intermediate" },
   { icon: '<i class="bi bi-filetype-css"></i>', name: "CSS", level: "Advanced" },
