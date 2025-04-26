@@ -20,7 +20,7 @@
   text-align: left;
   width: 1200px;
   position: relative;
-  margin: 0;
+  margin-bottom: 0.5em;
   padding: 0;
   display: block;
 }
@@ -192,6 +192,12 @@
 
   .projects-title {
     font-size: 2rem;
+    width: 100%;
+  }
+  .projects-title::before {
+    width: 30px;
+    height: 3px;
+    margin-bottom: 8px;
   }
 }
 
