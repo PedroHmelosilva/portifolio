@@ -53,7 +53,7 @@ const Projects = () => {
       title: "CEP Finder",
       description: "Brazilian postal code search application",
       image: buscador_cep,
-      technologies: ["JavaScript", "API Integration"],
+      technologies: ["JavaScript", "API Integration", "HTML", "CSS"],
       link: "https://github.com/PedroHmelosilva/projeto_buscadordecep",
       siteUrl: "https://projeto-buscadordecep.vercel.app"
     },
@@ -62,7 +62,7 @@ const Projects = () => {
       title: "PHP Starter",
       description: "Initial PHP learning project",
       image: "https://via.placeholder.com/800x400",
-      technologies: ["PHP", "Web Development"],
+      technologies: ["PHP", "HTML", "CSS", "XAMPP"],
       link: "https://github.com/PedroHmelosilva/projeto_php_inicial",
       siteUrl: null
     },
@@ -71,7 +71,7 @@ const Projects = () => {
       title: "Password Generator",
       description: "JavaScript application for generating secure passwords",
       image: gerador_senhas,
-      technologies: ["JavaScript", "Security"],
+      technologies: ["JavaScript", "HTML", "CSS"],
       link: "https://github.com/PedroHmelosilva/gerador_de_senhas",
       siteUrl: null
     },
