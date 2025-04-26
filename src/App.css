@@ -61,10 +61,6 @@ div#letters {
     padding: 0;
   }
 
-  h1 {
-    font-size: 1rem;
-  }
-
   img#perfil_foto {
     width: 300px;
     height: 300px;
@@ -79,8 +75,8 @@ div#letters {
 
 /* Additional styles for very small screens */
 @media screen and (max-width: 480px) {
-  h1 {
-    font-size: 1rem;
+  h1#title {
+    font-size: 3rem;
   }
 
   img#perfil_foto {
