@@ -92,3 +92,17 @@
   font-size: 0.97rem;
   color: #b8b8b8;
 }
+
+@media screen and (max-width: 768px) {
+  h2.skills-title {
+    font-size: 2rem;
+    width: 100%;
+    padding: 2rem 1rem;
+    margin: 0;
+  }
+  .skills-title::before {
+    width: 30px;
+    height: 3px;
+    margin-bottom: 8px;
+  }
+}

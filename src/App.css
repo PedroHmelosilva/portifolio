@@ -46,10 +46,6 @@ div#letters {
 
 /* Responsive Design for Mobile Devices */
 @media screen and (max-width: 768px) {
-  #root {
-    padding-top: 4rem; /* Adjust padding for mobile */
-  }
-
   div#container {
     align-items: center;
     justify-content: center;
