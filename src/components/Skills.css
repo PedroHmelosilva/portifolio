@@ -33,7 +33,6 @@
   height: 4px;
   background: orange;
   border-radius: 2px;
-  margin-bottom: 12px;
 }
 
 @media screen and (max-width: 768px) {
@@ -46,6 +45,10 @@
     height: 3px;
     margin-bottom: 8px;
   }
+}
+
+.skill-card-info {
+  width: 100%;
 }
 
 .skills-card-list {
@@ -77,7 +80,7 @@
 }
 
 .skill-card-icon {
-  font-size: 2.6rem;
+  font-size: 4rem;
   margin-bottom: 0.6rem;
   color: #ffb86c;
 }
@@ -89,8 +92,28 @@
 }
 
 .skill-card-level {
-  font-size: 0.97rem;
+  font-size: 1rem;
   color: #b8b8b8;
+  width: 100%;
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5em;
+}
+
+.progress-bar {
+  background: #eee;
+  border-radius: 8px;
+  height: 14px;
+  width: 100%;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  background: #F2994B;
+  height: 100%;
+  border-radius: 8px 0 0 8px;
+  transition: width 0.5s;
 }
 
 @media screen and (max-width: 768px) {

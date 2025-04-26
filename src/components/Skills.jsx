@@ -5,13 +5,13 @@ import { faReact, faPython, faNodeJs, faJs, faCss3Alt, faHtml5 } from '@fortawes
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 
 const skills = [
-    { icon: faReact, name: "React", level: "Intermediate" },
-    { icon: faCode, name: "C#", level: "Intermediate" },
-    { icon: faPython, name: "Python", level: "Intermediate" },
-    { icon: faNodeJs, name: "NodeJS", level: "Intermediate" },
-    { icon: faJs, name: "JavaScript", level: "Intermediate" },
-    { icon: faCss3Alt, name: "CSS", level: "Advanced" },
-    { icon: faHtml5, name: "HTML", level: "Advanced" },
+  { icon: faReact, name: "React", level: 75 },
+  { icon: faCode, name: "C#", level: 50 },
+  { icon: faPython, name: "Python", level: 65 },
+  { icon: faNodeJs, name: "NodeJS", level: 60 },
+  { icon: faJs, name: "JavaScript", level: 80 },
+  { icon: faCss3Alt, name: "CSS", level: 95 },
+  { icon: faHtml5, name: "HTML", level: 100 },
 ];
 
 function SkillCard({ icon, name, level }) {
@@ -22,7 +22,12 @@ function SkillCard({ icon, name, level }) {
       </div>
       <div className="skill-card-info">
         <div className="skill-card-title">{name}</div>
-        <div className="skill-card-level">{level}</div>
+        <div className="skill-card-level">
+          <div className="progress-bar">
+            <div className="progress" style={{ width: `${level}%` }}></div>
+          </div>
+            <p>{level}%</p>
+        </div>
       </div>
     </div>
   );

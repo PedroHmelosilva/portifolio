@@ -176,8 +176,6 @@ color: #fff;
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-  
-
   .navbar {
     padding: 0.5rem;
     justify-content: center;
@@ -196,11 +194,12 @@ color: #fff;
   .menu-toggle {
     display: block;
     width: 100%;
+    height: 100vh;
     text-align: center;
   }
 
   .menu-buttons {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -217,6 +216,7 @@ color: #fff;
     width: 100%;
     font-size: 1.2rem;
     padding: 1rem;
+    color: #fff;
   }
 }
 
