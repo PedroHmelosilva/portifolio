@@ -9,8 +9,9 @@
 
 .projects-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 3rem;
   color: #333;
+  text-align: left;
+  width: 100%;
 }
 
 .projects-grid {
@@ -24,7 +25,7 @@
 
 .project-card {
   display: flex;
-  background: #ffffff;
+  background: #242424;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -57,13 +58,13 @@
 }
 
 .project-content h3 {
-  color: #333;
+  color: #fff;
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
 }
 
 .project-content p {
-  color: #666;
+  color: #fff;
   margin-bottom: 1rem;
   line-height: 1.6;
 }
@@ -144,6 +145,23 @@
   z-index: 1;
 }
 
+.orange-line {
+  width: fit-content;
+  min-width: 1em;
+  height: 4px;
+  background: orange;
+  margin: 0 0 16px 0;
+  border-radius: 2px;
+  padding: 0;
+  display: inline-block;
+}
+
+.orange-line h2 {
+  margin: 0;
+  padding: 0 16px 0 0;
+  display: inline-block;
+}
+
 @media screen and (max-width: 768px) {
   .project-card {
     flex-direction: column;
@@ -159,7 +177,6 @@
 
   .projects-section h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
   }
 }
 

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import perfil_foto from './assets/img/perfil_foto2.jpg'
 import { Document, Page } from 'react-pdf';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 
 function App() {

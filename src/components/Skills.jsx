@@ -1,20 +1,25 @@
 import React from "react";
 import "./Skills.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faReact, faPython, faNodeJs, faJs, faCss3Alt, faHtml5 } from '@fortawesome/free-brands-svg-icons'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
 
 const skills = [
-    { icon: '<i class="bi bi-braces"></i>', name: "C#", level: "Intermediate" },
-    { icon: '<i class="bi bi-filetype-py"></i>', name: "Python", level: "Intermediate" },
-  { icon: '<i class="bi bi-terminal"></i>', name: "NodeJS", level: "Intermediate" },
-  { icon: '<i class="bi bi-filetype-jsx"></i>', name: "React", level: "Intermediate" },
-  { icon: '<i class="bi bi-filetype-js"></i>', name: "JavaScript", level: "Intermediate" },
-  { icon: '<i class="bi bi-filetype-css"></i>', name: "CSS", level: "Advanced" },
-  { icon: '<i class="bi bi-filetype-html"></i>', name: "HTML", level: "Advanced" },
+    { icon: faReact, name: "React", level: "Intermediate" },
+    { icon: faCode, name: "C#", level: "Intermediate" },
+    { icon: faPython, name: "Python", level: "Intermediate" },
+    { icon: faNodeJs, name: "NodeJS", level: "Intermediate" },
+    { icon: faJs, name: "JavaScript", level: "Intermediate" },
+    { icon: faCss3Alt, name: "CSS", level: "Advanced" },
+    { icon: faHtml5, name: "HTML", level: "Advanced" },
 ];
 
 function SkillCard({ icon, name, level }) {
   return (
     <div className="skill-card">
-      <div className="skill-card-icon" dangerouslySetInnerHTML={{ __html: icon }} />
+      <div className="skill-card-icon">
+        {icon ? <FontAwesomeIcon icon={icon} /> : null}
+      </div>
       <div className="skill-card-info">
         <div className="skill-card-title">{name}</div>
         <div className="skill-card-level">{level}</div>

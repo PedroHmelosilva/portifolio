@@ -88,8 +88,8 @@ const Projects = () => {
 
   return (
     <section id="projects-section" className="projects-section">
-      <h2>My Projects</h2>
       <div className="projects-grid">
+        <div className="orange-line"><h2>My Projects</h2></div>
         {projects.map((project) => (
           <div key={project.id} className="project-card">
             <div className="project-content">
