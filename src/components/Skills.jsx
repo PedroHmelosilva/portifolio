@@ -31,7 +31,7 @@ function SkillCard({ icon, name, level }) {
 export default function Skills() {
   return (
     <section className="skills-section">
-      <h2 id='skills'>Skills</h2>
+      <h2 className="skills-title" id='skills'>Skills</h2>
       <div className="skills-card-list">
         {skills.map((skill) => (
           <SkillCard key={skill.name} {...skill} />

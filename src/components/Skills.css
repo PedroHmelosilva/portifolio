@@ -11,6 +11,27 @@
   letter-spacing: 1px;
 }
 
+.skills-title {
+  font-size: 5rem;
+  color: #333;
+  text-align: left;
+  width: 1200px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.skills-title::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: orange;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
 .skills-card-list {
   display: flex;
   flex-wrap: wrap;
