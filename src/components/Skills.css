@@ -1,4 +1,4 @@
-.skills-section {
+.section-style {
   padding: 2rem 0;
   background-color: #f5f5f5;
   color: #000;
@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.skills-section h2 {
+.section-style h2 {
   margin-bottom: 1.5rem;
   font-size: 5rem;
   letter-spacing: 1px;
@@ -57,7 +57,7 @@
   gap: 1.5rem;
   justify-content: center;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 .skill-card {
@@ -83,6 +83,12 @@
   font-size: 4rem;
   margin-bottom: 0.6rem;
   color: #ffb86c;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .skill-card-title {

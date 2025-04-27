@@ -6,6 +6,9 @@ import galeria from '../assets/img/site_galeria.png';
 import gerador_senhas from '../assets/img/gerador_senhas.png';
 import profile_site from '../assets/img/profile.png';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhp, faReact, faPython, faNodeJs, faJs, faCss3Alt, faHtml5,faSass } from '@fortawesome/free-brands-svg-icons'
+
 const Projects = () => {
   const [activeProjectId, setActiveProjectId] = useState(null);
   const [activeButtonType, setActiveButtonType] = useState(null);
@@ -26,7 +29,7 @@ const Projects = () => {
       title: "C# Projects",
       description: "Collection of C# applications developed during ETEC studies, exploring .NET and object-oriented programming.",
       image: "https://raw.githubusercontent.com/PedroHmelosilva/portifolio/main/public/logo192.png",
-      technologies: ["C#", ".NET"],
+      technologies: ["C#",],
       link: "https://github.com/PedroHmelosilva/repositorio_projetos_visualstudio",
       siteUrl: null
     },
@@ -35,7 +38,7 @@ const Projects = () => {
       title: "Gallery Project",
       description: "Responsive image gallery web app built with Sass, showcasing modern web design techniques.",
       image: galeria,
-      technologies: ["Sass", "HTML"],
+      technologies: [<FontAwesomeIcon icon={faHtml5} />, <FontAwesomeIcon icon={faSass} />,],
       link: "https://github.com/PedroHmelosilva/projeto_galeria",
       siteUrl: null
     },
@@ -44,7 +47,7 @@ const Projects = () => {
       title: "To-Do List",
       description: "Interactive task management app demonstrating core JavaScript functionality.",
       image: todo,
-      technologies: ["JavaScript", "HTML", "CSS"],
+      technologies: [<FontAwesomeIcon icon={faJs} />, <FontAwesomeIcon icon={faHtml5} />, <FontAwesomeIcon icon={faCss3Alt} />],
       link: null,
       siteUrl: null
     },
@@ -53,7 +56,7 @@ const Projects = () => {
       title: "CEP Finder",
       description: "Brazilian postal code search application",
       image: buscador_cep,
-      technologies: ["JavaScript", "API Integration", "HTML", "CSS"],
+      technologies: ["API integration",<FontAwesomeIcon icon={faJs} />, <FontAwesomeIcon icon={faHtml5} />, <FontAwesomeIcon icon={faCss3Alt} />],
       link: "https://github.com/PedroHmelosilva/projeto_buscadordecep",
       siteUrl: "https://projeto-buscadordecep.vercel.app"
     },
@@ -62,7 +65,7 @@ const Projects = () => {
       title: "PHP Starter",
       description: "Initial PHP learning project",
       image: "https://via.placeholder.com/800x400",
-      technologies: ["PHP", "HTML", "CSS", "XAMPP"],
+      technologies: [<FontAwesomeIcon icon={faPhp} />, <FontAwesomeIcon icon={faHtml5} />, <FontAwesomeIcon icon={faCss3Alt} />],
       link: "https://github.com/PedroHmelosilva/projeto_php_inicial",
       siteUrl: null
     },
@@ -71,7 +74,7 @@ const Projects = () => {
       title: "Password Generator",
       description: "JavaScript application for generating secure passwords",
       image: gerador_senhas,
-      technologies: ["JavaScript", "HTML", "CSS"],
+      technologies: [<FontAwesomeIcon icon={faJs} />, <FontAwesomeIcon icon={faHtml5} />, <FontAwesomeIcon icon={faCss3Alt} />],
       link: "https://github.com/PedroHmelosilva/gerador_de_senhas",
       siteUrl: null
     },
@@ -80,7 +83,7 @@ const Projects = () => {
       title: "Portfolio Website",
       description: "Profile site built with React, SASS and Vite, showcasing web development skills.",
       image: profile_site,
-      technologies: ["React", "Vite", "JavaScript", "CSS"],
+      technologies: [<FontAwesomeIcon icon={faReact} />, <FontAwesomeIcon icon={faSass} />],
       link: "https://github.com/PedroHmelosilva/profile_pessoal",
       siteUrl: null
     }
