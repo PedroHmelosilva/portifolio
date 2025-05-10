@@ -25,8 +25,7 @@ const skills = [
 ];
 
 const tools = [
-    { icon: github, name: "GitHub", level: 80 , credits: "Designed by Freepik from www.flaticon.com."},
-    { icon: visualStudio, name: "Visual Studio", level: 75 , credits: "Designed by Freepik from www.flaticon.com."},
+    { icon: github, name: "GitHub", level: 80 , credits: "Designed by Freepik from www.flaticon.com."}, { icon: visualStudio, name: "Visual Studio", level: 75 , credits: "Designed by Freepik from www.flaticon.com."},
     { icon: nodejs, name: "NodeJS", level: 60 , credits: "Designed by Freepik from www.flaticon.com."},
 ];
 

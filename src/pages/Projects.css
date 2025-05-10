@@ -51,6 +51,16 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Cards com índice ímpar (1º, 3º, 5º...) - texto à esquerda, imagem à direita (padrão) */
+.project-card:nth-of-type(odd) {
+  flex-direction: row;
+}
+
+/* Cards com índice par (2º, 4º, 6º...) - imagem à esquerda, texto à direita */
+.project-card:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -178,6 +188,12 @@
 
 @media screen and (max-width: 768px) {
   .project-card {
+    flex-direction: column;
+  }
+  
+  /* Anula as regras de alternância no modo mobile */
+  .project-card:nth-of-type(odd),
+  .project-card:nth-of-type(even) {
     flex-direction: column;
   }
   

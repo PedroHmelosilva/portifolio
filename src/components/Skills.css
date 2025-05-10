@@ -49,6 +49,11 @@
 
 .skill-card-info {
   width: 100%;
+  position: relative;
+  min-height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .skills-card-list {
@@ -83,17 +88,43 @@
   font-size: 4rem;
   margin-bottom: 0.6rem;
   color: #ffb86c;
+  transition: transform 0.3s ease;
 }
 
-img{
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.skill-card:hover .skill-card-icon {
+  transform: translateY(-10px);
+}
+
+img {
+  width: 70%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover img {
+  transform: scale(0.9);
 }
 
 .skill-card-title {
   font-weight: 600;
   font-size: 1.1rem;
+  margin-bottom: 0;
+  opacity: 0;
+  height: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+
+.skill-card:hover .skill-card-title {
+  opacity: 1;
+  height: auto;
+  transform: translateY(0);
   margin-bottom: 0.2rem;
 }
 
@@ -135,3 +166,4 @@ img{
     margin-bottom: 8px;
   }
 }
+

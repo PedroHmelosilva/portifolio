@@ -29,26 +29,27 @@ function Navbar() {
   };
 
   return (
-    <nav className={`navbar${isSticky ? ' sticky' : ''}${showNavbar ? ' show' : ' hide'}`}>
-      <div className="desktop-buttons">
-        <a href="#skills">Skills</a>
-        <a href="#tools">Tools</a>
-        <a href="#projects-section">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <div className={`hamburger ${isOpen ? 'active' : ''}`}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div className={`menu-buttons ${isOpen ? 'active' : ''}`}>
+    <>
+      <nav className={`navbar${isSticky ? ' sticky' : ''}${showNavbar ? ' show' : ' hide'}`}>
+        <div className="desktop-buttons">
           <a href="#skills">Skills</a>
+          <a href="#tools">Tools</a>
           <a href="#projects-section">Projects</a>
           <a href="#contact">Contact</a>
         </div>
+        <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      
+      <div className={`menu-buttons ${isOpen ? 'active' : ''}`}>
+        <a href="#skills">Skills</a>
+        <a href="#projects-section">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
-    </nav>
+    </>
   );
 }
 
