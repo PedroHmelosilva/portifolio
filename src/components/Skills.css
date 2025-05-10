@@ -50,10 +50,10 @@
 .skill-card-info {
   width: 100%;
   position: relative;
-  min-height: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  height: auto;
 }
 
 .skills-card-list {
@@ -108,7 +108,7 @@ img {
 
 .skill-card-title {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 0;
   opacity: 0;
   height: 0;
@@ -125,7 +125,7 @@ img {
   opacity: 1;
   height: auto;
   transform: translateY(0);
-  margin-bottom: 0.2rem;
+  bottom: 90%;
 }
 
 .skill-card-level {

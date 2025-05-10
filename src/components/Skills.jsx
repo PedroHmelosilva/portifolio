@@ -15,17 +15,18 @@ import visualStudio from '../assets/img/visual-basic.png';
 
 const skills = [
     { icon: php, name: "PHP", level: 40 , credits: "Designed by Freepik from www.flaticon.com."},
-    { icon: sqlServer, name: "SQL Server", level: 60 , credits: "Designed by Freepik from www.flaticon.com."},
+    { icon: sqlServer, name: "SQL Server", level: 40 , credits: "Designed by Freepik from www.flaticon.com."},
     { icon: react, name: "React", level: 75 , credits: "Designed by Freepik from www.flaticon.com."},
-    { icon: c_sharp, name: "Csharp", level: 50 , credits: "Designed by Freepik from www.flaticon.com."},
-    { icon: python, name: "Python", level: 65 , credits: "Designed by Freepik from www.flaticon.com."},
-    { icon: javascript, name: "JavaScript", level: 80 , credits: "Designed by Freepik from www.flaticon.com."},
+    { icon: c_sharp, name: "Csharp", level: 35 , credits: "Designed by Freepik from www.flaticon.com."},
+    { icon: python, name: "Python", level: 55 , credits: "Designed by Freepik from www.flaticon.com."},
+    { icon: javascript, name: "JavaScript", level: 75 , credits: "Designed by Freepik from www.flaticon.com."},
     { icon: css, name: "CSS", level: 95 , credits: "Designed by Freepik from www.flaticon.com."},
     { icon: html, name: "HTML", level: 100 , credits: "Designed by Freepik from www.flaticon.com."},
 ];
 
 const tools = [
-    { icon: github, name: "GitHub", level: 80 , credits: "Designed by Freepik from www.flaticon.com."}, { icon: visualStudio, name: "Visual Studio", level: 75 , credits: "Designed by Freepik from www.flaticon.com."},
+    { icon: github, name: "GitHub", level: 80 , credits: "Designed by Freepik from www.flaticon.com."},
+    { icon: visualStudio, name: "Visual Studio", level: 45 , credits: "Designed by Freepik from www.flaticon.com."},
     { icon: nodejs, name: "NodeJS", level: 60 , credits: "Designed by Freepik from www.flaticon.com."},
 ];
 
