@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Projects.css';
 import buscador_cep from '../assets/img/buscador_cep.png';
 import todo from '../assets/img/to_do.png';
@@ -12,6 +12,9 @@ import { faPhp, faReact, faPython, faNodeJs, faJs, faCss3Alt, faHtml5,faSass } f
 const Projects = () => {
   const [activeProjectId, setActiveProjectId] = useState(null);
   const [activeButtonType, setActiveButtonType] = useState(null);
+  const [centeredCardId, setCenteredCardId] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const cardRefs = useRef([]);
 
   const handleProjectLinkHover = (projectId, buttonType) => {
     setActiveProjectId(projectId);
@@ -22,6 +25,47 @@ const Projects = () => {
     setActiveProjectId(null);
     setActiveButtonType(null);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+
+    // Configura Intersection Observer apenas para desktop
+    if (!isMobile) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.7, // Consideramos centrado quando 70% do card está visível
+      };
+
+      const observerCallback = (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = parseInt(entry.target.getAttribute('data-id'));
+            setCenteredCardId(id);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      // Observar todos os cards
+      cardRefs.current.forEach(card => {
+        if (card) observer.observe(card);
+      });
+
+      return () => {
+        cardRefs.current.forEach(card => {
+          if (card) observer.unobserve(card);
+        });
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobile]);
 
   const projects = [
     {
@@ -93,8 +137,13 @@ const Projects = () => {
     <section id="projects-section" className="projects-section">
       <h2 className="projects-title">My Projects</h2>
       <div className="projects-grid">
-        {projects.map((project) => (
-          <div key={project.id} className="project-card">
+        {projects.map((project, index) => (
+          <div 
+            key={project.id} 
+            className={`project-card ${centeredCardId === project.id ? 'centered-card' : ''}`}
+            ref={el => cardRefs.current[index] = el}
+            data-id={project.id}
+          >
             <div className="project-content">
               <h3>{project.title}</h3>
               <p>{project.description}</p>

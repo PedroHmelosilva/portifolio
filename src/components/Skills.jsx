@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Skills.css";
 
 import c_sharp from '../assets/img/csharp.png';
@@ -31,10 +31,63 @@ const tools = [
 ];
 
 function SkillCard({ icon, name, level, credits }) {
+    const [isVisible, setIsVisible] = useState(false);
+    const cardRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    
+    const handleMouseMove = (e) => {
+        if (isMobile) return;
+        
+        const card = cardRef.current;
+        if (!card) return;
+        
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        setMousePosition({ x, y });
+    };
+    
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            { threshold: 0.5 }
+        );
+        
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+        
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+            if (cardRef.current) {
+                observer.unobserve(cardRef.current);
+            }
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    
+    // Calcula a rotação 3D baseado na posição do mouse (para desktop)
+    const imageStyle = !isMobile ? {
+        transform: `rotateY(${mousePosition.x * 0.01}deg) rotateX(${-mousePosition.y * 0.01}deg)`
+    } : {};
+    
     return (
-        <div className="skill-card">
+        <div 
+            className={`skill-card ${isMobile && isVisible ? 'mobile-visible' : ''}`} 
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+        >
             <div className="skill-card-icon">
-                {icon && <img src={icon} alt={credits} />}
+                {icon && <img src={icon} alt={credits} style={imageStyle} />}
             </div>
             <div className="skill-card-info">
                 <div className="skill-card-title">{name}</div>
@@ -70,3 +123,4 @@ export default function Skills() {
         </section>
     );
 }
+

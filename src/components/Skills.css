@@ -89,6 +89,24 @@
   margin-bottom: 0.6rem;
   color: #ffb86c;
   transition: transform 0.3s ease;
+  perspective: 1000px; /* Adiciona perspectiva para efeito 3D */
+}
+
+.skill-card-icon::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+  bottom: -5px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  transform: translateZ(-1px);
+}
+
+.skill-card:hover .skill-card-icon::after {
+  opacity: 0.6;
 }
 
 .skill-card:hover .skill-card-icon {
@@ -99,11 +117,15 @@ img {
   width: 70%;
   height: auto;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
+  transform-style: preserve-3d; /* Preserva o efeito 3D */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .skill-card:hover img {
-  transform: scale(0.9);
+  transform: rotateY(15deg) rotateX(-10deg) scale(1.05);
+  box-shadow: 15px 15px 25px rgba(0,0,0,0.15), 
+              -5px -5px 15px rgba(255,255,255,0.05);
 }
 
 .skill-card-title {
@@ -111,21 +133,11 @@ img {
   font-size: 1rem;
   margin-bottom: 0;
   opacity: 0;
-  height: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   overflow: hidden;
-  position: absolute;
-  width: 100%;
-  left: 0;
   text-align: center;
-}
-
-.skill-card:hover .skill-card-title {
-  opacity: 1;
-  height: auto;
-  transform: translateY(0);
-  bottom: 90%;
+  width: 100%;
 }
 
 .skill-card-level {
@@ -165,5 +177,108 @@ img {
     height: 3px;
     margin-bottom: 8px;
   }
+
+  /* Em dispositivos móveis, não dependemos de hover */
+  .skill-card .skill-card-title {
+    position: static;
+    height: auto;
+    opacity: 0;
+    transform: translateY(10px);
+    margin-top: 0.5rem;
+    transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+  }
+  
+  /* Mostrar título de qualquer card visível na tela */
+  .skill-card.visible .skill-card-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Remover regras conflitantes */
+  .skill-card:hover .skill-card-title {
+    position: static;
+    bottom: auto;
+  }
+  
+  /* Ajuste na imagem para dispositivos móveis */
+  .skill-card-icon img {
+    width: 60%;
+  }
+  
+  /* Não precisamos do efeito de hover em telas touch */
+  .skill-card:hover {
+    transform: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  }
+  
+  .skill-card:hover img {
+    transform: none;
+  }
+  
+  .skill-card:hover .skill-card-icon {
+    transform: none;
+  }
+
+  /* Mostrar título apenas para os cards com classe name-visible */
+  .skill-card.name-visible .skill-card-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Esconder título para todos os outros cards */
+  .skill-card:not(.name-visible) .skill-card-title {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .skill-card.mobile-visible img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+  }
+  
+  .skill-card-icon::after {
+    display: none;
+  }
 }
 
+/* Desktop: mostrar título no hover */
+@media screen and (min-width: 769px) {
+  .skill-card:hover .skill-card-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile: mostrar título quando o card estiver visível na tela */
+@media screen and (max-width: 768px) {
+  .skill-card-title {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .skill-card.mobile-visible .skill-card-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Remover efeitos de hover para mobile */
+  .skill-card:hover {
+    transform: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  }
+  
+  .skill-card:hover img {
+    transform: none;
+  }
+  
+  .skill-card:hover .skill-card-icon {
+    transform: none;
+  }
+}
+
+/* Mantém os efeitos 3D em tablets, mas os simplifica */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .skill-card:hover img {
+    transform: rotateY(10deg) rotateX(-5deg) scale(1.03);
+  }
+}

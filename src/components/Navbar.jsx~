@@ -46,7 +46,6 @@ function Navbar() {
       
       <div className={`menu-buttons ${isOpen ? 'active' : ''}`}>
         <a href="#skills">Skills</a>
-        <a href="#tools">Tools</a>
         <a href="#projects-section">Projects</a>
         <a href="#contact">Contact</a>
       </div>

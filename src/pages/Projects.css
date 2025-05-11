@@ -28,7 +28,7 @@
 .projects-title::before {
   content: "";
   display: block;
-  width: 150px;
+  width: 100px;
   height: 4px;
   background: orange;
   border-radius: 2px;
@@ -38,7 +38,6 @@
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  padding: 1rem;
   gap: 3em;
 }
 
@@ -48,7 +47,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
 }
 
 /* Cards com índice ímpar (1º, 3º, 5º...) - texto à esquerda, imagem à direita (padrão) */
@@ -59,12 +58,6 @@
 /* Cards com índice par (2º, 4º, 6º...) - imagem à esquerda, texto à direita */
 .project-card:nth-of-type(even) {
   flex-direction: row-reverse;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  border: 1.5px solid #f2994b7b;
 }
 
 .project-content {
@@ -85,7 +78,7 @@
 
 .project-content h3 {
   color: #fff;
-  margin-bottom: 1em;
+  margin: 0.5em 0;
   font-size: 1.5rem;
   text-align: left;
 }
@@ -94,7 +87,7 @@
   color: #fff;
   margin-bottom: 1rem;
   line-height: 1.6;
-  text-align: justify;
+  text-align: left;
 }
 
 .project-technologies {
@@ -238,4 +231,53 @@
   .project-card:hover {
     transform: none !important;
   }
+
+  /* Desativar efeitos em mobile */
+  .project-card.centered-card {
+    transform: none !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+  }
+  
+  .project-card.centered-card::before {
+    display: none !important;
+  }
 }
+
+/* Efeito para cards centrados (apenas desktop) */
+@media screen and (min-width: 769px) {
+  .project-card.centered-card {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .project-card.centered-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+                               transparent, 
+                               rgba(242, 153, 75, 0.05), 
+                               rgba(242, 153, 75, 0.1), 
+                               rgba(242, 153, 75, 0.05), 
+                               transparent);
+    z-index: -1;
+    animation: shine 1.5s ease-in-out infinite;
+    border-radius: 10px;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
