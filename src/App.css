@@ -2,6 +2,7 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
+  overflow-x: hidden; /* Impede scrollbar horizontal */
 }
 
 h1#title {
@@ -16,6 +17,65 @@ img#perfil_foto {
   border-radius: 50%;
   border: 5px solid #734C4C;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Container para a foto com as linhas */
+#perfil_container {
+  position: relative;
+  width: 520px;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Primeira linha sólida */
+#perfil_container::before {
+  content: '';
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  border-radius: 50%;
+  border: 2px solid #734C4C;
+  opacity: 0.7;
+  z-index: 0;
+  animation: rotate 30s linear infinite, pulse 6s ease-in-out infinite;
+}
+
+/* Segunda linha sólida */
+#perfil_container::after {
+  content: '';
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  border: 1px solid #a57777;
+  opacity: 0.5;
+  z-index: 0;
+  animation: rotate 40s linear infinite reverse, pulse 6s ease-in-out infinite 1s;
+}
+
+/* Animações para as linhas */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.01) rotate(180deg); /* Reduzir o scale de 1.02 para 1.01 */
+    opacity: 0.8;
+  }
 }
 
 .separator {
@@ -38,6 +98,8 @@ div#container {
   width: 100%;
   padding: 0 10rem 0 10rem;
   background-color: #242424;
+  overflow: hidden; /* Garante que nada vai vazar */
+  box-sizing: border-box; /* Garante que padding não aumenta a largura */
 }
 
 div#letters {
@@ -64,7 +126,25 @@ div#letters {
   img#perfil_foto {
     width: 300px;
     height: 300px;
-    margin-bottom: 10em;
+    margin-bottom: 2em;
+  }
+
+  #perfil_container {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 8em;
+  }
+
+  /* Responsivo para a primeira linha */
+  #perfil_container::before {
+    width: 340px;
+    height: 340px;
+  }
+
+  /* Responsivo para a segunda linha */
+  #perfil_container::after {
+    width: 380px;
+    height: 380px;
   }
 
   .separator {
@@ -82,6 +162,24 @@ div#letters {
   img#perfil_foto {
     width: 250px;
     height: 250px;
+    margin-bottom: 0;
+  }
+
+  #perfil_container {
+    width: 270px;
+    height: 270px;
+  }
+
+  /* Responsivo para a primeira linha */
+  #perfil_container::before {
+    width: 290px;
+    height: 290px;
+  }
+
+  /* Responsivo para a segunda linha */
+  #perfil_container::after {
+    width: 330px;
+    height: 330px;
   }
 }
 
@@ -111,4 +209,10 @@ div#letters {
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   position: relative;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }

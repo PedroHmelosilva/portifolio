@@ -100,14 +100,14 @@
 .tech-tag {
   background-color: #D97A43;
   color: white;
-  padding: 0.3rem 0.8rem;
+  padding: 0.2rem 0.7rem;
   border-radius: 15px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-top: 1rem;
   position: relative;
 }
@@ -215,7 +215,7 @@
   }
 
   .projects-title {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
 
   .project-content {
@@ -260,8 +260,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, 
-                               transparent, 
+    background: linear-gradient(45deg,
+                               transparent,
                                rgba(242, 153, 75, 0.05), 
                                rgba(242, 153, 75, 0.1), 
                                rgba(242, 153, 75, 0.05), 

@@ -27,11 +27,13 @@ function App() {
                           <Page pageNumber={1} />
                         </Document>
                         <button onClick={() => setShowCard(false)}>Close</button>
-                      </div>
-                    )}
+                    </div>
+                )}
             </div>
-          <div className='separator'></div>
-          <img id="perfil_foto" src={perfil_foto} alt="Profile Photo" />
+            <div className='separator'></div>
+            <div id="perfil_container">
+              <img id="perfil_foto" src={perfil_foto} alt="Profile Photo" />
+            </div>
         </div>
     </>
   )

@@ -100,7 +100,7 @@ const Projects = () => {
       title: "CEP Finder",
       description: "Brazilian postal code search application",
       image: buscador_cep,
-      technologies: ["API integration",<FontAwesomeIcon icon={faJs} />, <FontAwesomeIcon icon={faHtml5} />, <FontAwesomeIcon icon={faCss3Alt} />],
+      technologies: [<FontAwesomeIcon icon={faJs} />, <FontAwesomeIcon icon={faHtml5} />, <FontAwesomeIcon icon={faCss3Alt} />],
       link: "https://github.com/PedroHmelosilva/projeto_buscadordecep",
       siteUrl: "https://projeto-buscadordecep.vercel.app"
     },
