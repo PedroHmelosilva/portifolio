@@ -1,28 +1,85 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
 
 const Contact = () => {
+  const [etecExpanded, setEtecExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar se é dispositivo móvel para melhorar a experiência do usuário
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Verificar no carregamento inicial
+    checkIfMobile();
+    
+    // Adicionar listener para redimensionamento
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Limpeza
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted');
   };
 
+  const toggleEtecCard = () => {
+    setEtecExpanded(!etecExpanded);
+  };
+
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
         <div className="contact-info">
-          <h1>More about me</h1>
-          <p className="contact-text">
-          Data Science student at <strong>Fatec Jundiaí </strong> 
-          and Systems Analysis and Development Technician 
-          at <strong>Etec Vasco Antônio Venchiarutti</strong>. I have 
-          basic knowledge in Full-Stack development and practical 
-          experience with academic projects, including a TCC selected 
-          for the FETEPS Science Fair. I am looking for an internship 
-          or young apprenticeship opportunity to apply my technical 
-          knowledge.
-          </p>
+          <div className="education-timeline">
+            <h1>Academic Journey</h1>
+            <div className="timeline">
+              <div className={`timeline-item ${etecExpanded ? 'expanded' : ''}`}>
+                <div className="timeline-dot"></div>
+                <div className="timeline-date">2022 - 2024</div>
+                <div 
+                  className="timeline-content clickable"
+                  onClick={toggleEtecCard}
+                  aria-expanded={etecExpanded}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      toggleEtecCard();
+                    }
+                  }}
+                >
+                  <h3>Etec Vasco Antônio Venchiarutti</h3>
+                  <p>Systems Analysis and Development</p>
+                  <div className="tcc-details">
+                    <h4>Knowledge</h4>
+                    <p>
+                      <strong>Cicle Eye:</strong> A web system for managing food donations and distribution, aimed at reducing food waste and helping communities in need.
+                      The project was selected for the FETEPS Science Fair due to its social impact and technical implementation.
+                    </p>
+                    <p>
+                      <strong>Technologies used:</strong> React, Node.js, Express, MySQL, Bootstrap
+                    </p>
+                    <p>
+                      <strong>My role:</strong> Full-stack developer and project coordinator, responsible for the application architecture and database modeling.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div className="timeline-dot"></div>
+                <div className="timeline-date">2025 - 2027 (Studying)</div>
+                <div className="timeline-content">
+                  <h3>Fatec Jundiaí Deputado Ary Fossen</h3>
+                  <p>Data Science</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="contact-info">

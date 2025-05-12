@@ -107,8 +107,201 @@
   height: 40px;
 }
 
+/* Timeline Styles */
+.education-timeline h1 {
+  margin-bottom: 1.5rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin-left: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background-color: #D97A43;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.4rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #D97A43;
+  border: 3px solid #242424;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #D97A43;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  background-color: #2e2e2e;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid #D97A43;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.timeline-content p {
+  margin-bottom: 0;
+  color: #ddd;
+}
+
+.timeline-content.clickable {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.timeline-content.clickable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content.clickable::after {
+  content: '\25BC';  /* Down arrow symbol */
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #D97A43;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item.expanded .timeline-content.clickable::after {
+  transform: rotate(180deg);
+}
+
+.tcc-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin-top: 0;
+  border-top: 1px solid rgba(217, 122, 67, 0.3);
+}
+
+.timeline-item.expanded .tcc-details {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.tcc-details h4 {
+  color: #D97A43;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.tcc-details p {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
   }
+
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-info {
+    gap: 1rem;
+  }
+  
+  .contact-text, .contact-text-list {
+    font-size: 1rem;
+  }
+  
+  .education-timeline h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .timeline {
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+  }
+  
+  .timeline-dot {
+    left: -1.9rem;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-content {
+    padding: 0.8rem;
+  }
+  
+  .timeline-item.expanded .tcc-details {
+    max-height: 800px; /* Aumentado para comportar mais texto em layouts estreitos */
+  }
+  
+  .tcc-details h4 {
+    font-size: 1rem;
+  }
+  
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .bi {
+    width: 32px;
+    height: 32px;
+  }
 }
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .timeline-content.clickable::after {
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
+  }
+  
+  .timeline-item.expanded .tcc-details {
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  
+  .timeline-dot {
+    left: -1.7rem;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .timeline::before {
+    width: 1.5px;
+  }
+}
+
