@@ -62,6 +62,7 @@
   justify-content: center;
   margin: 0 auto;
   max-width: 1200px;
+  position: relative;
 }
 
 .skill-card {
@@ -76,6 +77,7 @@
   flex-direction: column;
   align-items: center;
   transition: transform 0.18s, box-shadow 0.18s;
+  animation: fadeInUp 0.4s ease forwards;
 }
 
 .skill-card:hover {
@@ -343,4 +345,73 @@ img {
 
 .skill-card.name-visible .icon-shadow {
   display: none;
+}
+
+/* Botão "Mostrar mais" */
+.show-more-button {
+  background-color: #242424;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-more-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.show-more-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.show-more-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #F2994B;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.show-more-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Animação para os cards quando são exibidos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajustes para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  .show-more-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }

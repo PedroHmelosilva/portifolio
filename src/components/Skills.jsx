@@ -103,24 +103,97 @@ function SkillCard({ icon, name, level, credits }) {
 }
 
 export default function Skills() {
+    const [showAllSkills, setShowAllSkills] = useState(false);
+    const [showAllTools, setShowAllTools] = useState(false);
+    const [itemsPerRow, setItemsPerRow] = useState(4);
+    
+    // Determinar quantos itens mostrar por linha com base na largura da tela
+    useEffect(() => {
+        const updateItemsPerRow = () => {
+            if (window.innerWidth <= 480) {
+                setItemsPerRow(2);
+            } else if (window.innerWidth <= 768) {
+                setItemsPerRow(3);
+            } else {
+                setItemsPerRow(4);
+            }
+        };
+        
+        updateItemsPerRow();
+        window.addEventListener('resize', updateItemsPerRow);
+        
+        return () => {
+            window.removeEventListener('resize', updateItemsPerRow);
+        };
+    }, []);
+    
+    // Dividir as habilidades: primeira linha e o resto
+    const firstRowSkills = skills.slice(0, itemsPerRow);
+    const restSkills = skills.slice(itemsPerRow);
+    
+    // Dividir as ferramentas: primeira linha e o resto
+    const firstRowTools = tools.slice(0, itemsPerRow);
+    const restTools = tools.slice(itemsPerRow);
+    
+    // Verifica se há itens além da primeira linha
+    const hasMoreSkills = restSkills.length > 0;
+    const hasMoreTools = restTools.length > 0;
+    
+    const toggleSkills = () => {
+        setShowAllSkills(!showAllSkills);
+    };
+    
+    const toggleTools = () => {
+        setShowAllTools(!showAllTools);
+    };
+
     return (
         <section id="skills" className="section-style">
             <h2 className="skills-title">Skills</h2>
             <div className="skills-card-list">
-                {skills.map((skill) => (
+                {firstRowSkills.map((skill) => (
+                    <SkillCard key={skill.name} {...skill} />
+                ))}
+                
+                {showAllSkills && restSkills.map((skill) => (
                     <SkillCard key={skill.name} {...skill} />
                 ))}
             </div>
+            
+            {hasMoreSkills && (
+                <button 
+                    className="show-more-button" 
+                    onClick={toggleSkills}
+                    aria-expanded={showAllSkills}
+                >
+                    {showAllSkills ? "Mostrar menos" : "Mostrar mais"}
+                </button>
+            )}
+            
             <br/>
+            
             <div className="tools" id='tools'>
                 <h2 className="skills-title">Tools</h2>
                 <div className="skills-card-list">
-                    {tools.map((tool) => (
+                    {firstRowTools.map((tool) => (
+                        <SkillCard key={tool.name} {...tool} />
+                    ))}
+                    
+                    {showAllTools && restTools.map((tool) => (
                         <SkillCard key={tool.name} {...tool} />
                     ))}
                 </div>
+                
+                {hasMoreTools && (
+                    <button 
+                        className="show-more-button" 
+                        onClick={toggleTools}
+                        aria-expanded={showAllTools}
+                    >
+                        {showAllTools ? "Mostrar menos" : "Mostrar mais"}
+                    </button>
+                )}
             </div>
         </section>
     );
 }
-
